@@ -79,3 +79,15 @@ const palindrome = str => {
 }
 
 console.log(palindrome("a man a plan a canal panama"))
+
+// CUT AND PASTE
+// Cut and paste 'num' elements from index 0 to the end of the array.
+const cutAndPaste = (arr, num) => {
+  // 1. Remove "num" amount of elements starting at index 0
+  const spliced = arr.splice(0, num)
+  // 2. Merge the spliced array with the original array but concat it so it is after the original array
+  const solution = arr.concat(spliced)
+  return solution
+}
+
+console.log(cutAndPaste([1, 2, 5, "help", "wow", 3], 1))
