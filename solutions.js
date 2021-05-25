@@ -22,6 +22,8 @@ const arrayDiffs = (arr1, arr2) => {
 };
 console.log(arrayDiffs([1, 44, 2, 3, 5], [33, 1, 2, 3, 4, 5]));
 
+// -------------------------------------------------------------------------------------------------
+
 //DOES INCLUDE
 const doesInclude = (data, x) => {
   if (data.includes(x)) {
@@ -30,6 +32,8 @@ const doesInclude = (data, x) => {
     return false
   }
 }
+
+// -------------------------------------------------------------------------------------------------
 
 //ODDS FROM EVENS
 const oddsFromEvens = (arr) => {
@@ -54,8 +58,9 @@ const oddsFromEvens = (arr) => {
   let solution = even.concat(odd);
   return solution;
 };
-
 console.log(oddsFromEvens([423, 322, 918, 45, 6, 79, 55]));
+
+// -------------------------------------------------------------------------------------------------
 
 // PALINDROME
 // 1. Get rid of the spaces in the string
@@ -77,8 +82,9 @@ const palindrome = str => {
     return false
   }
 }
-
 console.log(palindrome("a man a plan a canal panama"))
+
+// -------------------------------------------------------------------------------------------------
 
 // CUT AND PASTE
 // Cut and paste 'num' elements from index 0 to the end of the array.
@@ -89,5 +95,43 @@ const cutAndPaste = (arr, num) => {
   const solution = arr.concat(spliced)
   return solution
 }
-
 console.log(cutAndPaste([1, 2, 5, "help", "wow", 3], 1))
+
+// -------------------------------------------------------------------------------------------------
+
+//FACTORIALIZE
+// https://www.freecodecamp.org/news/how-to-factorialize-a-number-in-javascript-9263c89a4b38/
+// Factorial: The product of an integer and all the integers below it; e.g. factorial four ( 4! ) is equal to 24.
+const factorialize = (num) => {
+  let solution = num;
+  // While num is greater than 1, decrease it each time then multiply it by the original num
+  while (num > 1) {
+    num--
+    // These 2 below are the same
+    // solution = solution * num
+    solution *= num
+  }
+  return solution
+}
+console.log(factorialize(4))
+
+// -------------------------------------------------------------------------------------------------
+
+//INSERT INDEX
+// Create a function which takes two arguments, an unsorted array (arr) and an integer (num).
+// Determine the index number of the array at which the num should be inserted into the sorted arr.
+// The output should return integer representing the index number.
+const getIndexToInsert = (arr, num) => {
+  // 1. Insert num into the array
+  arr.push(num);
+  // 2. Put the array in order from smallest to largest
+  arr.sort(function (a, b) {
+    return a - b;
+  });
+  // 3. Return the index value of num
+  const solution = arr.indexOf(num);
+  return solution;
+};
+console.log(getIndexToInsert([40, 60, 5, 322, 48, 83], 80));
+
+// -------------------------------------------------------------------------------------------------
