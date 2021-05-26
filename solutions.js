@@ -135,3 +135,28 @@ const getIndexToInsert = (arr, num) => {
 console.log(getIndexToInsert([40, 60, 5, 322, 48, 83], 80));
 
 // -------------------------------------------------------------------------------------------------
+
+//LONGEST WORD
+//return the longest word in a given array
+const longestWord = str => {
+  // 1. Split up the BIG string into smaller one word strings
+    let split = str.split(' ')
+    // 2. Assign temporary values
+    let longestWordLength = 0;
+    let longestWord = null;
+    // Loop
+    for (let i = 0; i < split.length; i++) {
+      // 3. If split[i].length is greater than longestWord.length (starts at 0)
+      if (split[i].length > longestWordLength) {
+        // 4. Set longestWordLength to split[i].length
+        longestWordLength = split[i].length
+        // 5. The longestWord then becomes the longest word in the split array
+        longestWord = split[i]
+      }
+    }
+    return longestWord
+  }
+console.log(longestWord("The quick brown fox jumped over the lazy dog"))
+
+// -------------------------------------------------------------------------------------------------
+
