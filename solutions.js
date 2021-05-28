@@ -169,3 +169,13 @@ const removeSpaces = str => {
   return str
 }
 console.log(removeSpaces("alphabet soup is green   "))
+
+// -------------------------------------------------------------------------------------------------
+
+//STRING BEARS REPEATING
+
+const repeatString = (str, num) => {
+  let x = str.repeat(num)
+  return x
+}
+console.log(repeatString("abc", 3))
