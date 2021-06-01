@@ -1,3 +1,4 @@
+// --------------------------------------------UNIT 1-----------------------------------------------------
 //ARRAY DIFFERENCES
 // Return an array with all the unique numbers in each array
 const arrayDiffs = (arr1, arr2) => {
@@ -84,7 +85,7 @@ const palindrome = str => {
 }
 console.log(palindrome("a man a plan a canal panama"))
 
-// -------------------------------------------------------------------------------------------------
+// --------------------------------------------UNIT 2-----------------------------------------------------
 
 // CUT AND PASTE
 // Cut and paste 'num' elements from index 0 to the end of the array.
@@ -219,3 +220,5 @@ const titleCase = str => {
   return solution
 }
 console.log(titleCase("I'm a little tea pot"))
+
+// --------------------------------------------UNIT 3-----------------------------------------------------
