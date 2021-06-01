@@ -179,3 +179,25 @@ const repeatString = (str, num) => {
   return x
 }
 console.log(repeatString("abc", 3))
+
+// -------------------------------------------------------------------------------------------------
+
+//SUM ALL IN ARRAY
+//add all the numbers in the given array, strings included
+//if an element inside the array is a string that contains a number, include it in the addition
+//if an element inside the array is a string that is not a number, do not include it in the addition
+const sumAllInArray = arr => {
+  const newArr = [];
+// 1. Convert all elements in the array to integers
+  for (let i = 0; i < arr.length; i++) {
+    const numArr = parseInt(arr[i])
+    newArr.push(numArr)
+  }
+  // 2.Get rid of the 'a' in the array of numbers
+  const filtered = newArr.filter(num => num)
+  // 3. Reduce the array to a single number by adding each element with each other, starting at index 0
+  const solution = filtered.reduce((a,b) => a+b, 0)
+  // Final: Return an array with the sum of all numbers
+  return solution
+}
+console.log(sumAllInArray(["-1", "a", 4, "-32", 8, "94"]))
