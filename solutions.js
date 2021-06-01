@@ -201,3 +201,21 @@ const sumAllInArray = arr => {
   return solution
 }
 console.log(sumAllInArray(["-1", "a", 4, "-32", 8, "94"]))
+
+// -------------------------------------------------------------------------------------------------
+
+// TITLE CASE
+// Capitalize the first letter of each word
+const titleCase = str => {
+  // Seperate the words by spaces and capitalize each index[0]  
+  let splitWords = str.toLowerCase().split(' ');
+  for (let i = 0; i < splitWords.length; i++) {
+    // Capitalize the first letter of each word (charAt(0))
+    // Then add that to the word starting at index 1. Ex. substring(1) = 'm, ittle, ea, ot
+    splitWords[i] = splitWords[i].charAt(0).toUpperCase() + splitWords[i].substring(1)
+  }
+  // Join the words back together with a space inbetween
+  const solution = splitWords.join(' ');
+  return solution
+}
+console.log(titleCase("I'm a little tea pot"))
