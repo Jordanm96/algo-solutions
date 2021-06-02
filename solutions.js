@@ -222,3 +222,19 @@ const titleCase = str => {
 console.log(titleCase("I'm a little tea pot"))
 
 // --------------------------------------------UNIT 3-----------------------------------------------------
+
+// GENERATE PHONE NUMBER
+// Add dashes between numbers to create a phone number while accounting for objects and numbers
+const generatePhoneNumber = nums => {
+  if (typeof nums == 'object') {
+    // Join the object together to make one string of numbers
+    const str = nums.join('')
+    return `${str.substring(0, 3)}-${str.substring(3, 6)}-${str.substring(6)}`
+  } else if (typeof nums === 'number') {
+    // If it is a number, change it to a string
+    const str = nums.toString()
+    return `${str.substring(0, 3)}-${str.substring(3, 6)}-${str.substring(6)}`
+  }
+}
+generatePhoneNumber([3, 2, 1, 2, 3, 4, 5, 4, 5, 4])
+generatePhoneNumber(8885653421)
