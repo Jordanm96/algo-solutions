@@ -21,7 +21,7 @@ const arrayDiffs = (arr1, arr2) => {
   // Final: Return one array with all the unique numbers
   return solution;
 };
-console.log(arrayDiffs([1, 44, 2, 3, 5], [33, 1, 2, 3, 4, 5]));
+// console.log(arrayDiffs([1, 44, 2, 3, 5], [33, 1, 2, 3, 4, 5]));
 
 // -------------------------------------------------------------------------------------------------
 
@@ -59,7 +59,7 @@ const oddsFromEvens = (arr) => {
   let solution = even.concat(odd);
   return solution;
 };
-console.log(oddsFromEvens([423, 322, 918, 45, 6, 79, 55]));
+// console.log(oddsFromEvens([423, 322, 918, 45, 6, 79, 55]));
 
 // -------------------------------------------------------------------------------------------------
 
@@ -83,7 +83,7 @@ const palindrome = str => {
     return false
   }
 }
-console.log(palindrome("a man a plan a canal panama"))
+// console.log(palindrome("a man a plan a canal panama"))
 
 // --------------------------------------------UNIT 2-----------------------------------------------------
 
@@ -96,7 +96,7 @@ const cutAndPaste = (arr, num) => {
   const solution = arr.concat(spliced)
   return solution
 }
-console.log(cutAndPaste([1, 2, 5, "help", "wow", 3], 1))
+// console.log(cutAndPaste([1, 2, 5, "help", "wow", 3], 1))
 
 // -------------------------------------------------------------------------------------------------
 
@@ -114,7 +114,7 @@ const factorialize = (num) => {
   }
   return solution
 }
-console.log(factorialize(4))
+// console.log(factorialize(4))
 
 // -------------------------------------------------------------------------------------------------
 
@@ -133,7 +133,7 @@ const getIndexToInsert = (arr, num) => {
   const solution = arr.indexOf(num);
   return solution;
 };
-console.log(getIndexToInsert([40, 60, 5, 322, 48, 83], 80));
+// console.log(getIndexToInsert([40, 60, 5, 322, 48, 83], 80));
 
 // -------------------------------------------------------------------------------------------------
 
@@ -157,7 +157,7 @@ const longestWord = str => {
     }
     return longestWord
   }
-console.log(longestWord("The quick brown fox jumped over the lazy dog"))
+// console.log(longestWord("The quick brown fox jumped over the lazy dog"))
 
 // -------------------------------------------------------------------------------------------------
 
@@ -169,7 +169,7 @@ const removeSpaces = str => {
   }
   return str
 }
-console.log(removeSpaces("alphabet soup is green   "))
+// console.log(removeSpaces("alphabet soup is green   "))
 
 // -------------------------------------------------------------------------------------------------
 
@@ -179,7 +179,7 @@ const repeatString = (str, num) => {
   let x = str.repeat(num)
   return x
 }
-console.log(repeatString("abc", 3))
+// console.log(repeatString("abc", 3))
 
 // -------------------------------------------------------------------------------------------------
 
@@ -201,7 +201,7 @@ const sumAllInArray = arr => {
   // Final: Return an array with the sum of all numbers
   return solution
 }
-console.log(sumAllInArray(["-1", "a", 4, "-32", 8, "94"]))
+// console.log(sumAllInArray(["-1", "a", 4, "-32", 8, "94"]))
 
 // -------------------------------------------------------------------------------------------------
 
@@ -219,7 +219,7 @@ const titleCase = str => {
   const solution = splitWords.join(' ');
   return solution
 }
-console.log(titleCase("I'm a little tea pot"))
+// console.log(titleCase("I'm a little tea pot"))
 
 // --------------------------------------------UNIT 3-----------------------------------------------------
 
@@ -240,4 +240,17 @@ generatePhoneNumber([3, 2, 1, 2, 3, 4, 5, 4, 5, 4])
 generatePhoneNumber(8885653421)
 
 // -------------------------------------------------------------------------------------------------
+// PUT THIS STRING IN ORDER BASED ON THE NUMBER WITHIN THE STRING
 
+function order(words) {
+  let word = words.split(" ")
+  let arr = []
+  for (let i = 0; i < word.length; i++) {
+    let ind = word[i].match(/(\d+)/)
+    console.log(ind)
+    ind.index = ind[0] - 1
+    arr.splice(ind.index, 0, ind.input)
+    }
+    return arr.join(" ")
+  }
+console.log(order("is2 Thi1s T4est 3a"))
