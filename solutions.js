@@ -264,13 +264,15 @@ function order(words) {
 
 var fizzBuzz = function(n) {
   let str = []
-
-  if (n % 15 === 0) {
-    return 'FizzBuzz'
-  } else if (n % 3 === 0) {
-    return 'Fizz'
-  } else (n % 5 === 0)
-    return 'Buzz'
-  
+  for (let i = 1; i <= n; i++) {
+    if (i % 15 === 0) {
+      str.push('FizzBuzz')
+    } else if (i % 3 === 0) {
+      str.push('Fizz')
+    } else if (i % 5 === 0) {
+      str.push('Buzz')
+    } else str.push(i.toString())
+  }
+  return str
 };
-console.log((fizzBuzz(3)))
+console.log(fizzBuzz(5))
