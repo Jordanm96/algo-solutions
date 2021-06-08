@@ -280,13 +280,14 @@ let fizzBuzz = function(n) {
 // Given an array of integers nums, every element appears twice except for one. Find that single one.
 let singleNumber = function (nums) {
   let repeatsArr = [];
+  // Sort our array in order from smallest to largest
+  nums.sort()
   nums.sort((a, b) => {
     // Push repeats into a new array
     if (a === b) {
       repeatsArr.push(a, b);
     }
   });
-  console.log(repeatsArr)
   for (let i = 0; i < nums.length; i++) {
     // IF a number in nums array does NOT equal a number in the repeats array, return it
     if (nums[i] != repeatsArr[i]) {
