@@ -283,9 +283,10 @@ let singleNumber = function (nums) {
   nums.sort((a, b) => {
     // Push repeats into a new array
     if (a === b) {
-      repeatsArr.push(a);
+      repeatsArr.push(a, b);
     }
   });
+  console.log(repeatsArr)
   for (let i = 0; i < nums.length; i++) {
     // IF a number in nums array does NOT equal a number in the repeats array, return it
     if (nums[i] != repeatsArr[i]) {
@@ -293,4 +294,4 @@ let singleNumber = function (nums) {
     }
   };
 }
-console.log(singleNumber([4,1,2,1,2]))
+console.log(singleNumber([1,0,1]))
