@@ -247,10 +247,30 @@ function order(words) {
   let arr = []
   for (let i = 0; i < word.length; i++) {
     let ind = word[i].match(/(\d+)/)
-    console.log(ind)
+    // console.log(ind)
     ind.index = ind[0] - 1
     arr.splice(ind.index, 0, ind.input)
     }
     return arr.join(" ")
   }
-console.log(order("is2 Thi1s T4est 3a"))
+// console.log(order("is2 Thi1s T4est 3a"))
+
+// FIZZBUZZ
+// Given an integer n, return a string array answer (1-indexed) where:
+// answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
+// answer[i] == "Fizz" if i is divisible by 3.
+// answer[i] == "Buzz" if i is divisible by 5.
+// answer[i] == i if non of the above conditions are true.
+
+var fizzBuzz = function(n) {
+  let str = []
+
+  if (n % 15 === 0) {
+    return 'FizzBuzz'
+  } else if (n % 3 === 0) {
+    return 'Fizz'
+  } else (n % 5 === 0)
+    return 'Buzz'
+  
+};
+console.log((fizzBuzz(3)))
