@@ -262,7 +262,7 @@ function order(words) {
 // answer[i] == "Buzz" if i is divisible by 5.
 // answer[i] == i if non of the above conditions are true.
 
-var fizzBuzz = function(n) {
+let fizzBuzz = function(n) {
   let str = []
   for (let i = 1; i <= n; i++) {
     if (i % 15 === 0) {
@@ -275,4 +275,22 @@ var fizzBuzz = function(n) {
   }
   return str
 };
-console.log(fizzBuzz(5))
+// console.log(fizzBuzz(5))
+
+// Given an array of integers nums, every element appears twice except for one. Find that single one.
+let singleNumber = function (nums) {
+  let repeatsArr = [];
+  nums.sort((a, b) => {
+    // Push repeats into a new array
+    if (a === b) {
+      repeatsArr.push(a);
+    }
+  });
+  for (let i = 0; i < nums.length; i++) {
+    // IF a number in nums array does NOT equal a number in the repeats array, return it
+    if (nums[i] != repeatsArr[i]) {
+      return nums[i]
+    }
+  };
+}
+console.log(singleNumber([4,1,2,1,2]))
