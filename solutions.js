@@ -28,11 +28,11 @@ const arrayDiffs = (arr1, arr2) => {
 //DOES INCLUDE
 const doesInclude = (data, x) => {
   if (data.includes(x)) {
-    return true
+    return true;
   } else {
-    return false
+    return false;
   }
-}
+};
 
 // -------------------------------------------------------------------------------------------------
 
@@ -67,22 +67,22 @@ const oddsFromEvens = (arr) => {
 // 1. Get rid of the spaces in the string
 // 2. Have one string be normal and create a second string that is in reverse order
 // 3. If the normal string and the reverse string are equal, return true, else return false
-const palindrome = str => {
+const palindrome = (str) => {
   // pal is equal to all the spaces in our string
-  let pal = /[\W_]/g
+  let pal = /[\W_]/g;
   // Replace all the white space in the string with no space
-  let smallString = str.replace(pal, '')
+  let smallString = str.replace(pal, "");
   // console.log(smallString)
   // Split takes each character in the string and seperates them into their own single letter string
   // Reverse flips the array of strings
   // Join is the opposite of split and JOINS the split up strings into one long string
-  let reverse = smallString.split('').reverse().join('')
+  let reverse = smallString.split("").reverse().join("");
   if (smallString === reverse) {
-    return true
+    return true;
   } else {
-    return false
+    return false;
   }
-}
+};
 // console.log(palindrome("a man a plan a canal panama"))
 
 // --------------------------------------------UNIT 2-----------------------------------------------------
@@ -91,11 +91,11 @@ const palindrome = str => {
 // Cut and paste 'num' elements from index 0 to the end of the array.
 const cutAndPaste = (arr, num) => {
   // 1. Remove "num" amount of elements starting at index 0
-  const spliced = arr.splice(0, num)
+  const spliced = arr.splice(0, num);
   // 2. Merge the spliced array with the original array but concat it so it is after the original array
-  const solution = arr.concat(spliced)
-  return solution
-}
+  const solution = arr.concat(spliced);
+  return solution;
+};
 // console.log(cutAndPaste([1, 2, 5, "help", "wow", 3], 1))
 
 // -------------------------------------------------------------------------------------------------
@@ -107,13 +107,13 @@ const factorialize = (num) => {
   let solution = num;
   // While num is greater than 1, decrease it each time then multiply it by the original num
   while (num > 1) {
-    num--
+    num--;
     // These 2 below are the same
     // solution = solution * num
-    solution *= num
+    solution *= num;
   }
-  return solution
-}
+  return solution;
+};
 // console.log(factorialize(4))
 
 // -------------------------------------------------------------------------------------------------
@@ -139,36 +139,36 @@ const getIndexToInsert = (arr, num) => {
 
 //LONGEST WORD
 //return the longest word in a given array
-const longestWord = str => {
+const longestWord = (str) => {
   // 1. Split up the BIG string into smaller one word strings
-    let split = str.split(' ')
-    // 2. Assign temporary values
-    let longestWordLength = 0;
-    let longestWord = null;
-    // Loop
-    for (let i = 0; i < split.length; i++) {
-      // 3. If split[i].length is greater than longestWord.length (starts at 0)
-      if (split[i].length > longestWordLength) {
-        // 4. Set longestWordLength to split[i].length
-        longestWordLength = split[i].length
-        // 5. The longestWord then becomes the longest word in the split array
-        longestWord = split[i]
-      }
+  let split = str.split(" ");
+  // 2. Assign temporary values
+  let longestWordLength = 0;
+  let longestWord = null;
+  // Loop
+  for (let i = 0; i < split.length; i++) {
+    // 3. If split[i].length is greater than longestWord.length (starts at 0)
+    if (split[i].length > longestWordLength) {
+      // 4. Set longestWordLength to split[i].length
+      longestWordLength = split[i].length;
+      // 5. The longestWord then becomes the longest word in the split array
+      longestWord = split[i];
     }
-    return longestWord
   }
+  return longestWord;
+};
 // console.log(longestWord("The quick brown fox jumped over the lazy dog"))
 
 // -------------------------------------------------------------------------------------------------
 
 //REMOVE SPACES
 // remove all the spaces from a string
-const removeSpaces = str => {
-  for (let i=0; i < str.length; i++) {
-    str = str.replace(" ", '')
+const removeSpaces = (str) => {
+  for (let i = 0; i < str.length; i++) {
+    str = str.replace(" ", "");
   }
-  return str
-}
+  return str;
+};
 // console.log(removeSpaces("alphabet soup is green   "))
 
 // -------------------------------------------------------------------------------------------------
@@ -176,9 +176,9 @@ const removeSpaces = str => {
 //STRING BEARS REPEATING
 
 const repeatString = (str, num) => {
-  let x = str.repeat(num)
-  return x
-}
+  let x = str.repeat(num);
+  return x;
+};
 // console.log(repeatString("abc", 3))
 
 // -------------------------------------------------------------------------------------------------
@@ -187,72 +187,73 @@ const repeatString = (str, num) => {
 //add all the numbers in the given array, strings included
 //if an element inside the array is a string that contains a number, include it in the addition
 //if an element inside the array is a string that is not a number, do not include it in the addition
-const sumAllInArray = arr => {
+const sumAllInArray = (arr) => {
   const newArr = [];
-// 1. Convert all elements in the array to integers
+  // 1. Convert all elements in the array to integers
   for (let i = 0; i < arr.length; i++) {
-    const numArr = parseInt(arr[i])
-    newArr.push(numArr)
+    const numArr = parseInt(arr[i]);
+    newArr.push(numArr);
   }
   // 2.Get rid of the 'a' in the array of numbers
-  const filtered = newArr.filter(num => num)
+  const filtered = newArr.filter((num) => num);
   // 3. Reduce the array to a single number by adding each element with each other, starting at index 0
-  const solution = filtered.reduce((a,b) => a+b, 0)
+  const solution = filtered.reduce((a, b) => a + b, 0);
   // Final: Return an array with the sum of all numbers
-  return solution
-}
+  return solution;
+};
 // console.log(sumAllInArray(["-1", "a", 4, "-32", 8, "94"]))
 
 // -------------------------------------------------------------------------------------------------
 
 // TITLE CASE
 // Capitalize the first letter of each word
-const titleCase = str => {
-  // Seperate the words by spaces and capitalize each index[0]  
-  let splitWords = str.toLowerCase().split(' ');
+const titleCase = (str) => {
+  // Seperate the words by spaces and capitalize each index[0]
+  let splitWords = str.toLowerCase().split(" ");
   for (let i = 0; i < splitWords.length; i++) {
     // Capitalize the first letter of each word (charAt(0))
     // Then add that to the word starting at index 1. Ex. substring(1) = 'm, ittle, ea, ot
-    splitWords[i] = splitWords[i].charAt(0).toUpperCase() + splitWords[i].substring(1)
+    splitWords[i] =
+      splitWords[i].charAt(0).toUpperCase() + splitWords[i].substring(1);
   }
   // Join the words back together with a space inbetween
-  const solution = splitWords.join(' ');
-  return solution
-}
+  const solution = splitWords.join(" ");
+  return solution;
+};
 // console.log(titleCase("I'm a little tea pot"))
 
 // --------------------------------------------UNIT 3-----------------------------------------------------
 
 // GENERATE PHONE NUMBER
 // Add dashes between numbers to create a phone number while accounting for objects and numbers
-const generatePhoneNumber = nums => {
-  if (typeof nums == 'object') {
+const generatePhoneNumber = (nums) => {
+  if (typeof nums == "object") {
     // Join the object together to make one string of numbers
-    const str = nums.join('')
-    return `${str.substring(0, 3)}-${str.substring(3, 6)}-${str.substring(6)}`
-  } else if (typeof nums === 'number') {
+    const str = nums.join("");
+    return `${str.substring(0, 3)}-${str.substring(3, 6)}-${str.substring(6)}`;
+  } else if (typeof nums === "number") {
     // If it is a number, change it to a string
-    const str = nums.toString()
-    return `${str.substring(0, 3)}-${str.substring(3, 6)}-${str.substring(6)}`
+    const str = nums.toString();
+    return `${str.substring(0, 3)}-${str.substring(3, 6)}-${str.substring(6)}`;
   }
-}
-generatePhoneNumber([3, 2, 1, 2, 3, 4, 5, 4, 5, 4])
-generatePhoneNumber(8885653421)
+};
+generatePhoneNumber([3, 2, 1, 2, 3, 4, 5, 4, 5, 4]);
+generatePhoneNumber(8885653421);
 
 // -------------------------------------------------------------------------------------------------
 // PUT THIS STRING IN ORDER BASED ON THE NUMBER WITHIN THE STRING
 
 function order(words) {
-  let word = words.split(" ")
-  let arr = []
+  let word = words.split(" ");
+  let arr = [];
   for (let i = 0; i < word.length; i++) {
-    let ind = word[i].match(/(\d+)/)
+    let ind = word[i].match(/(\d+)/);
     // console.log(ind)
-    ind.index = ind[0] - 1
-    arr.splice(ind.index, 0, ind.input)
-    }
-    return arr.join(" ")
+    ind.index = ind[0] - 1;
+    arr.splice(ind.index, 0, ind.input);
   }
+  return arr.join(" ");
+}
 // console.log(order("is2 Thi1s T4est 3a"))
 
 // FIZZBUZZ
@@ -262,18 +263,18 @@ function order(words) {
 // answer[i] == "Buzz" if i is divisible by 5.
 // answer[i] == i if non of the above conditions are true.
 
-let fizzBuzz = function(n) {
-  let str = []
+let fizzBuzz = function (n) {
+  let str = [];
   for (let i = 1; i <= n; i++) {
     if (i % 15 === 0) {
-      str.push('FizzBuzz')
+      str.push("FizzBuzz");
     } else if (i % 3 === 0) {
-      str.push('Fizz')
+      str.push("Fizz");
     } else if (i % 5 === 0) {
-      str.push('Buzz')
-    } else str.push(i.toString())
+      str.push("Buzz");
+    } else str.push(i.toString());
   }
-  return str
+  return str;
 };
 // console.log(fizzBuzz(5))
 
@@ -281,7 +282,7 @@ let fizzBuzz = function(n) {
 let singleNumber = function (nums) {
   let repeatsArr = [];
   // Sort our array in order from smallest to largest
-  nums.sort()
+  nums.sort();
   nums.sort((a, b) => {
     // Push repeats into a new array
     if (a === b) {
@@ -291,8 +292,24 @@ let singleNumber = function (nums) {
   for (let i = 0; i < nums.length; i++) {
     // IF a number in nums array does NOT equal a number in the repeats array, return it
     if (nums[i] != repeatsArr[i]) {
-      return nums[i]
+      return nums[i];
     }
-  };
-}
-console.log(singleNumber([1,0,1]))
+  }
+};
+// console.log(singleNumber([1, 0, 1]));
+
+// CONTAINS DUPLICATE
+// Given an integer array nums, return true if any value appears at least twice in the array,
+// and return false if every element is distinct.
+const containsDuplicate = function (nums) {
+  // The indexOf() method returns the index within the calling String object of the first occurrence of the specified value, The lastIndexOf() method returns the index within the calling String object of the last occurrence of the specified value
+  const arr = nums.slice().sort();
+  for (let i = 0; i < arr.length; i++) {
+    // console.log(arr.indexOf(arr[i]));
+    // console.log(arr.lastIndexOf(arr[i]));
+    if (arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i])) {
+      return true;
+    } else return false;
+  }
+};
+console.log(containsDuplicate([2,14,18,22,22]));
