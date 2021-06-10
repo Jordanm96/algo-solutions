@@ -312,4 +312,29 @@ const containsDuplicate = function (nums) {
     } else return false;
   }
 };
-console.log(containsDuplicate([2,14,18,22,22]));
+// console.log(containsDuplicate([2,14,18,22,22]));
+
+
+// REVERSE THE ELEMENTS IN AN ARRAY
+const reverseString = function(s) {
+  let reverse = s.reverse()
+  return reverse
+};
+// console.log(reverseString(["h","e","l","l","o"]))
+
+// STAIRCASE CLIMB
+// You are climbing a staircase. It takes n steps to reach the top.
+// Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+const climbStairs = (n) => {
+  if (n == 1 || n == 0) return 1 // our base cases
+  let first = 1;
+  let second = 2;
+for (let i = 3; i <= n; i++) {
+    let third = first + second;
+    first = second;
+    second = third;
+  }
+  return second;
+}
+console.log(climbStairs(4));
+// OUTPUT SHOULD BE 5
