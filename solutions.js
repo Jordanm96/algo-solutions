@@ -336,5 +336,29 @@ for (let i = 3; i <= n; i++) {
   }
   return second;
 }
-console.log(climbStairs(4));
+// console.log(climbStairs(4));
 // OUTPUT SHOULD BE 5
+
+// FIBONACCI SERIES
+const fib = function (n) {
+  // // RECURSIVE SOLUTION
+  // // If it is the first two in the series, there is nothing to add up, so we just return n
+  if(n<2) {
+    return n
+  }
+  // Add the previous two numbers by doing n-1 + n-2
+  return fib(n - 1) + fib(n - 2)
+
+  // // NON RECURSIVE SOLUTION
+  // if (n < 3)
+  //   return 1
+  // let prev = 1
+  // let curr = 1
+  // for (let i = 2; i < n; i++) {
+  //   const next = prev + curr;
+  //   prev = curr;
+  //   curr = next;
+  // }
+  // return curr;
+};
+console.log(fib(5))
