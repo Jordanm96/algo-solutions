@@ -376,6 +376,7 @@ function declareWinner(fighter1, fighter2, firstAttacker) {
     firstAttacker = fighter2
     otherGuy = fighter1
   }
+  
   while (true) {
     // console.log(firstAttacker.health, otherGuy.health)
     otherGuy.health -= firstAttacker.damagePerAttack
@@ -388,6 +389,5 @@ function declareWinner(fighter1, fighter2, firstAttacker) {
       return otherGuy.name
     }
   }
-  // return "Write your code here";
 }
 console.log(declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Lew"));
