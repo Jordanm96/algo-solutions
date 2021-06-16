@@ -264,15 +264,15 @@ function order(words) {
 // answer[i] == i if non of the above conditions are true.
 
 let fizzBuzz = function (n) {
-  let str = [];
+  let arr = [];
   for (let i = 1; i <= n; i++) {
     if (i % 15 === 0) {
-      str.push("FizzBuzz");
+      arr.push("FizzBuzz");
     } else if (i % 3 === 0) {
-      str.push("Fizz");
+      arr.push("Fizz");
     } else if (i % 5 === 0) {
-      str.push("Buzz");
-    } else str.push(i.toString());
+      arr.push("Buzz");
+    } else arr.push(i.toString());
   }
   return str;
 };
@@ -314,11 +314,10 @@ const containsDuplicate = function (nums) {
 };
 // console.log(containsDuplicate([2,14,18,22,22]));
 
-
 // REVERSE THE ELEMENTS IN AN ARRAY
-const reverseString = function(s) {
-  let reverse = s.reverse()
-  return reverse
+const reverseString = function (s) {
+  let reverse = s.reverse();
+  return reverse;
 };
 // console.log(reverseString(["h","e","l","l","o"]))
 
@@ -326,16 +325,16 @@ const reverseString = function(s) {
 // You are climbing a staircase. It takes n steps to reach the top.
 // Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
 const climbStairs = (n) => {
-  if (n == 1 || n == 0) return 1 // our base cases
+  if (n == 1 || n == 0) return 1; // our base cases
   let first = 1;
   let second = 2;
-for (let i = 3; i <= n; i++) {
+  for (let i = 3; i <= n; i++) {
     let third = first + second;
     first = second;
     second = third;
   }
   return second;
-}
+};
 // console.log(climbStairs(4));
 // OUTPUT SHOULD BE 5
 
@@ -343,44 +342,52 @@ for (let i = 3; i <= n; i++) {
 const fib = function (n) {
   // // RECURSIVE SOLUTION
   // // If it is the first two in the series, there is nothing to add up, so we just return n
-  if(n<2) {
-    return n
+  if (n < 2) {
+    return n;
   }
   // Add the previous two numbers by doing n-1 + n-2
-  return fib(n - 1) + fib(n - 2)
-
-  // // NON RECURSIVE SOLUTION
-  // if (n < 3)
-  //   return 1
-  // let prev = 1
-  // let curr = 1
-  // for (let i = 2; i < n; i++) {
-  //   const next = prev + curr;
-  //   prev = curr;
-  //   curr = next;
-  // }
-  // return curr;
+  return fib(n - 1) + fib(n - 2);
 };
-console.log(fib(5))
+// console.log(fib(5))
+// // NON RECURSIVE SOLUTION to FIBONACCI
+// if (n < 3)
+//   return 1
+// let prev = 1
+// let curr = 1
+// for (let i = 2; i < n; i++) {
+//   const next = prev + curr;
+//   prev = curr;
+//   curr = next;
+// }
+// return curr;
 
-// REVERSEINT
-// --- Directions
-// Given an integer, return an integer that is the reverse
-// ordering of numbers.
-// --- Examples
-//   reverseInt(15) === 51
-//   reverseInt(981) === 189
-//   reverseInt(500) === 5
-//   reverseInt(-15) === -51
-//   reverseInt(-90) === -9
-function reverseInt(n) {
-  const reversed = n.toString().split("").reverse().join('')
-  if (n < 0) {
-    return parseInt(reversed) * -1
-  }
-  return parseInt(reversed)
-  // Other solution without if statement:
-  // return parseInt(reversed) * Math.sign(n)
-  // Math.sign returns -1 or 1 if n is negative or positive
+function Fighter(name, health, damagePerAttack) {
+  this.name = name;
+  this.health = health;
+  this.damagePerAttack = damagePerAttack;
 }
-console.log(reverseInt(-120))
+
+function declareWinner(fighter1, fighter2, firstAttacker) {
+  let otherGuy
+  if (firstAttacker === fighter1.name) {
+    firstAttacker = fighter1
+    otherGuy = fighter2
+  } else {
+    firstAttacker = fighter2
+    otherGuy = fighter1
+  }
+  while (true) {
+    // console.log(firstAttacker.health, otherGuy.health)
+    otherGuy.health -= firstAttacker.damagePerAttack
+    if (otherGuy.health > 0) {
+      firstAttacker.health -= otherGuy.damagePerAttack
+    } else {
+      return firstAttacker.name
+    }
+    if (firstAttacker.health <= 0) {
+      return otherGuy.name
+    }
+  }
+  // return "Write your code here";
+}
+console.log(declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Lew"));

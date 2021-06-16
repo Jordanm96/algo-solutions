@@ -56,10 +56,10 @@ console.log(reverseInt(-120))
 // maxChar("abcccccccd") === "c"
 // maxChar("apple 1231111") === "1"
 function maxChar(str) {
-  // Create an empty object that will contain the number of occurences for each character in our string = charMap
-  // For every character/letter of our string
+  // Create an empty object that will contain the number of occurences for each character in our string = charMap, a maxCount and maxChar variable
+  // For every char in our string:
   // Object at letters in the string = that object + 1 or 1 ( b/c at first it is an empty object, so it is undefined)
-  // We use IN for object iterations
+  // We use IN for object iterations, and OF for string iterations
   // charMap[char] is the VALUE of our character keys in the object and char is the key
   // IF that count is greater than the previous, update the maxCount and the maxChar
   let charMap = {};
@@ -68,6 +68,7 @@ function maxChar(str) {
   for (let char of str) {
     charMap[char] = charMap[char] + 1 || 1
   }
+  // console.log(charMap)
   for (let char in charMap) {
     if (charMap[char] > maxCount) {
       maxCount = charMap[char]
