@@ -376,7 +376,7 @@ function declareWinner(fighter1, fighter2, firstAttacker) {
     firstAttacker = fighter2
     otherGuy = fighter1
   }
-  
+
   while (true) {
     // console.log(firstAttacker.health, otherGuy.health)
     otherGuy.health -= firstAttacker.damagePerAttack
@@ -390,4 +390,12 @@ function declareWinner(fighter1, fighter2, firstAttacker) {
     }
   }
 }
-console.log(declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Lew"));
+// console.log(declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Lew"));
+
+function arrayDiff(a, b) {
+  let solution = a.filter((num) => !b.includes(num));
+  return solution
+  // Another example of using filter
+  // let solution = a.filter((num) => num > 1);
+}
+console.log(arrayDiff([1,2,3], [3]))
