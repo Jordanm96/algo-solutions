@@ -418,15 +418,12 @@ function isIsogram(str) {
 // console.log(isIsogram("fuck"))
 
 // PLUS ONE
-// Add one to the last integer in an array. If it is 0, add 1 by default.
 
 function plusOne(digits) {
-  if (digits === [0]) {
-    return [1]
-  } else {
-    digits[digits.length - 1] += 1
-    return digits
-  }
+  let num = digits.join('')
+  num = Number(num) + 1
+  num = num.toString()
+  return num.split("")
 }
-console.log(plusOne([1, 2, 5, 2]))
-console.log(plusOne([1, 0]))
+console.log(plusOne([1, 2, 5, 0]))
+// console.log(plusOne([1, 0]))
