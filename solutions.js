@@ -412,7 +412,21 @@ function isIsogram(str) {
   }
   return true
 }
-console.log(isIsogram("moose"))
-console.log(isIsogram("sweet"))
-console.log(isIsogram("apPle"))
-console.log(isIsogram("fuck"))
+// console.log(isIsogram("moose"))
+// console.log(isIsogram("sweet"))
+// console.log(isIsogram("apPle"))
+// console.log(isIsogram("fuck"))
+
+// PLUS ONE
+// Add one to the last integer in an array. If it is 0, add 1 by default.
+
+function plusOne(digits) {
+  if (digits === [0]) {
+    return [1]
+  } else {
+    digits[digits.length - 1] += 1
+    return digits
+  }
+}
+console.log(plusOne([1, 2, 5, 2]))
+console.log(plusOne([1, 0]))
