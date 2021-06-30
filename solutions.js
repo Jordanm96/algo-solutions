@@ -453,4 +453,4 @@ function buildCharMap(str) {
   return charMap;
 }
 console.log(anagrams('rail safety', 'fairy tales'))
-console.log(anagrams('Hi there', 'Bye there'))
+console.log(anagrams('Hi there', 'Bye there')) 
