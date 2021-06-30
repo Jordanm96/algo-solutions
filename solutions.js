@@ -429,3 +429,28 @@ console.log(plusOne([1, 2, 5, 0]))
 // console.log(plusOne([1, 0]))
 
 // ANAGRAMS
+function anagrams(stringA, stringB) {
+  const aCharMap = buildCharMap(stringA)
+  const bCharMap = buildCharMap(stringB)
+  // 2. Pull out the keys in an object and compare them to make sure the length of both strings are the same
+  if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
+    return false
+  }
+  // 3. Iterate over aCharMap object
+  for (let char in aCharMap) {
+    if (aCharMap[char] !== bCharMap[char]) {
+      return false
+    }
+  }
+  return true
+}
+  // 1. Helper function to map out both strings without using two for loops
+function buildCharMap(str) {
+  const charMap = {}
+  for (let char of str.replace(/[^\w]/g, "").toLowerCase()) {
+    charMap[char] = charMap[char] + 1 || 1
+  }
+  return charMap;
+}
+console.log(anagrams('rail safety', 'fairy tales'))
+console.log(anagrams('Hi there', 'Bye there'))
