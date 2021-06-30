@@ -427,3 +427,5 @@ function plusOne(digits) {
 }
 console.log(plusOne([1, 2, 5, 0]))
 // console.log(plusOne([1, 0]))
+
+// ANAGRAMS
