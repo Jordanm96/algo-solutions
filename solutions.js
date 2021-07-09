@@ -454,3 +454,22 @@ function buildCharMap(str) {
 }
 console.log(anagrams('rail safety', 'fairy tales'))
 console.log(anagrams('Hi there', 'Bye there'))
+ 
+// CAPITALIZE FIRST LETTER IN EACH WORD OF A STRING 
+function capitalize(str) {
+  // 1. Split up our string so we can target each word
+  let words = str.split(' ')
+  let solution = []
+  for (let i = 0; i < words.length; i++){
+    // Capitalize the first letter
+    let firstLetter = words[i][0].toUpperCase()
+    // Rip out the first letter of each word using slice method
+    let theRest = words[i].slice(1)
+    // CONCAT the first letter with the rest of the word and push into array
+    solution.push(firstLetter.concat(theRest))
+  }
+  // Returned the joined array!
+  console.log(solution.join(' '))
+  return solution.join(' ')
+}
+capitalize("hello, how are you doing?")
