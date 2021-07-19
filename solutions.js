@@ -455,7 +455,7 @@ function buildCharMap(str) {
 console.log(anagrams('rail safety', 'fairy tales'))
 console.log(anagrams('Hi there', 'Bye there'))
  
-// CAPITALIZE FIRST LETTER IN EACH WORD OF A STRING 
+// CAPITALIZE FIRST LETTER FOR EACH WORD IN A STRING 
 function capitalize(str) {
   // 1. Split up our string so we can target each word
   let words = str.split(' ')
