@@ -368,25 +368,25 @@ function Fighter(name, health, damagePerAttack) {
 }
 
 function declareWinner(fighter1, fighter2, firstAttacker) {
-  let otherGuy
+  let otherGuy;
   if (firstAttacker === fighter1.name) {
-    firstAttacker = fighter1
-    otherGuy = fighter2
+    firstAttacker = fighter1;
+    otherGuy = fighter2;
   } else {
-    firstAttacker = fighter2
-    otherGuy = fighter1
+    firstAttacker = fighter2;
+    otherGuy = fighter1;
   }
 
   while (true) {
     // console.log(firstAttacker.health, otherGuy.health)
-    otherGuy.health -= firstAttacker.damagePerAttack
+    otherGuy.health -= firstAttacker.damagePerAttack;
     if (otherGuy.health > 0) {
-      firstAttacker.health -= otherGuy.damagePerAttack
+      firstAttacker.health -= otherGuy.damagePerAttack;
     } else {
-      return firstAttacker.name
+      return firstAttacker.name;
     }
     if (firstAttacker.health <= 0) {
-      return otherGuy.name
+      return otherGuy.name;
     }
   }
 }
@@ -394,23 +394,23 @@ function declareWinner(fighter1, fighter2, firstAttacker) {
 
 function arrayDiff(a, b) {
   let solution = a.filter((num) => !b.includes(num));
-  return solution
+  return solution;
   // Another example of using filter
   // let solution = a.filter((num) => num > 1);
 }
 // console.log(arrayDiff([1, 2, 3], [3]))
 
-// ISOGRAM 
+// ISOGRAM
 // An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
 function isIsogram(str) {
-  let arr = str.toLowerCase().split("").sort()
-  console.log(arr)
+  let arr = str.toLowerCase().split("").sort();
+  console.log(arr);
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] == arr[i + 1]) {
-      return false
+      return false;
     }
   }
-  return true
+  return true;
 }
 // console.log(isIsogram("moose"))
 // console.log(isIsogram("sweet"))
@@ -420,56 +420,73 @@ function isIsogram(str) {
 // PLUS ONE
 
 function plusOne(digits) {
-  let num = digits.join('')
-  num = Number(num) + 1
-  num = num.toString()
-  return num.split("")
+  let num = digits.join("");
+  num = Number(num) + 1;
+  num = num.toString();
+  return num.split("");
 }
-console.log(plusOne([1, 2, 5, 0]))
+// console.log(plusOne([1, 2, 5, 0]))
 // console.log(plusOne([1, 0]))
 
 // ANAGRAMS
 function anagrams(stringA, stringB) {
-  const aCharMap = buildCharMap(stringA)
-  const bCharMap = buildCharMap(stringB)
+  const aCharMap = buildCharMap(stringA);
+  const bCharMap = buildCharMap(stringB);
   // 2. Pull out the keys in an object and compare them to make sure the length of both strings are the same
   if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
-    return false
+    return false;
   }
   // 3. Iterate over aCharMap object
   for (let char in aCharMap) {
     if (aCharMap[char] !== bCharMap[char]) {
-      return false
+      return false;
     }
   }
-  return true
+  return true;
 }
-  // 1. Helper function to map out both strings without using two for loops
+// 1. Helper function to map out both strings without using two for loops
 function buildCharMap(str) {
-  const charMap = {}
+  const charMap = {};
   for (let char of str.replace(/[^\w]/g, "").toLowerCase()) {
-    charMap[char] = charMap[char] + 1 || 1
+    charMap[char] = charMap[char] + 1 || 1;
   }
   return charMap;
 }
-console.log(anagrams('rail safety', 'fairy tales'))
-console.log(anagrams('Hi there', 'Bye there'))
- 
-// CAPITALIZE FIRST LETTER FOR EACH WORD IN A STRING 
+// console.log(anagrams('rail safety', 'fairy tales'))
+// console.log(anagrams('Hi there', 'Bye there'))
+
+// CAPITALIZE FIRST LETTER FOR EACH WORD IN A STRING
 function capitalize(str) {
   // 1. Split up our string so we can target each word
-  let words = str.split(' ')
-  let solution = []
-  for (let i = 0; i < words.length; i++){
+  let words = str.split(" ");
+  let solution = [];
+  for (let i = 0; i < words.length; i++) {
     // Capitalize the first letter
-    let firstLetter = words[i][0].toUpperCase()
+    let firstLetter = words[i][0].toUpperCase();
     // Rip out the first letter of each word using slice method
-    let theRest = words[i].slice(1)
+    let theRest = words[i].slice(1);
     // CONCAT the first letter with the rest of the word and push into array
-    solution.push(firstLetter.concat(theRest))
+    solution.push(firstLetter.concat(theRest));
   }
   // Returned the joined array!
-  console.log(solution.join(' '))
-  return solution.join(' ')
+  console.log(solution.join(" "));
+  return solution.join(" ");
 }
-capitalize("hello, how are you doing?")
+// capitalize("hello, how are you doing?")
+
+// Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+function twoSum(nums, target) {
+  // FInd two numbers in nums that add up to equal target
+  // Loop thru the array of numbers
+  // let solution = []
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = 0; j < nums.length; j++) {
+      // console.log(nums[i] + nums[i + 1])
+      if (nums[i] + nums[j] === target) {
+        return [i,j]
+      } else return "NO good"
+    }
+  }
+  // return solution
+}
+// console.log(twoSum([2, 7, 11, 15], 9));
