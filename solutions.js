@@ -490,3 +490,20 @@ function twoSum(nums, target) {
   // return solution
 }
 // console.log(twoSum([2, 7, 11, 15], 9));
+
+function fizBuzz(num) {
+  let arr = []
+  for (let i = 1; i <= num; i++) {
+    if (i % 15 === 0) {
+      arr.push('fizzbuzz')
+    } else if (i % 5 === 0) {
+      arr.push('buzz')
+    } else if (i % 3 === 0) {
+      arr.push('fizz')
+    } else {
+      arr.push(i.toString())
+    }
+  }
+  return arr
+}
+console.log(fizBuzz(15))
